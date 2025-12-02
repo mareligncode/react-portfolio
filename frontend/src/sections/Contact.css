@@ -1,0 +1,110 @@
+/* SECTION BACKGROUND */
+.contact-section {
+    padding: 80px 0;
+    background: linear-gradient(to bottom right, #eef2ff, #ffffff);
+}
+
+/* Title */
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #0d0d0d;
+}
+
+.section-title::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: #0d6efd;
+    display: block;
+    margin: 12px auto;
+    border-radius: 5px;
+}
+
+/* Success/Error Animation */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Card */
+.contact-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+/* Input Styles */
+.form-group-modern label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group-modern input,
+.form-group-modern textarea {
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid #d6d6d6;
+    transition: all 0.3s ease;
+}
+
+.form-group-modern input:focus,
+.form-group-modern textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+/* Submit Button */
+.btn-submit-modern {
+    background: #0d6efd;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-submit-modern:hover {
+    background: #0855d0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 80, 255, 0.3);
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    padding: 25px 10px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-icon {
+    font-size: 32px;
+    color: #0d6efd;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+.contact-info-card:hover .contact-info-icon {
+    transform: scale(1.15);
+}

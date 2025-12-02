@@ -36,6 +36,36 @@ const Projects = () => {
       github: 'https://github.com',
       live: 'https://example.com',
       category: 'ai'
+    },
+     {
+      id: 3,
+      title: 'AI Content Generator',
+      description: 'AI-powered content generation platform with GPT integration, template system, and content analytics.',
+      image: 'https://via.placeholder.com/400x250/e74c3c/ffffff',
+      technologies: ['Vue.js', 'Python', 'FastAPI', 'OpenAI', 'D3.js'],
+      github: 'https://github.com',
+      live: 'https://example.com',
+      category: 'ai'
+    },
+     {
+      id: 3,
+      title: 'AI Content Generator',
+      description: 'AI-powered content generation platform with GPT integration, template system, and content analytics.',
+      image: 'https://via.placeholder.com/400x250/e74c3c/ffffff',
+      technologies: ['Vue.js', 'Python', 'FastAPI', 'OpenAI', 'D3.js'],
+      github: 'https://github.com',
+      live: 'https://example.com',
+      category: 'ai'
+    },
+      {
+      id: 3,
+      title: 'AI Content Generator',
+      description: 'AI-powered content generation platform with GPT integration, template system, and content analytics.',
+      image: 'https://via.placeholder.com/400x250/e74c3c/ffffff',
+      technologies: ['Vue.js', 'Python', 'FastAPI', 'OpenAI', 'D3.js'],
+      github: 'https://github.com',
+      live: 'https://example.com',
+      category: 'ai'
     }
   ];
 

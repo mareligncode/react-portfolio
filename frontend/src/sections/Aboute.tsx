@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Card, ProgressBar } from 'react-bootstrap';
-import image1 from '../assets/maru.png'
-import image2 from '../assets/s.jpg'
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import image2 from '../assets/s.jpg';
+import './About.css'; // <-- Add this CSS file
 
 const About = () => {
   const stats = [
@@ -12,38 +12,44 @@ const About = () => {
   ];
 
   return (
-    <section className="section-padding bg-light">
+    <section className="about-section">
       <Container>
-        <h2 className="section-title text-center">About Me</h2>
-        
-        <Row className="align-items-center mb-5">
-          <Col lg={6}>
-            <img 
-              src={image2}
-              alt="About" 
-              className="img-fluid rounded-3"
-            />
+
+        {/* Title */}
+        <h2 className="section-title">About Me</h2>
+
+        <Row className="align-items-center">
+          {/* Image */}
+          <Col lg={6} className="mb-4 mb-lg-0">
+            <div className="about-image-wrapper">
+              <img src={image2} alt="About" className="about-image" />
+            </div>
           </Col>
+
+          {/* Content */}
           <Col lg={6}>
-            <h3 className="mb-4">Passionate Full-Stack Developer</h3>
-            <p className="mb-4">
-              I'm a dedicated full-stack developer with expertise in modern web technologies. 
-              I love creating efficient, scalable, and user-friendly applications that solve real-world problems.
-              and aslo i have strong expriance  in api integration,frontend and backend api,third party api.<p>
-              version control with git and gitub and aslo have expriance in tools like postman api testing and other as needed.</p>
+            <h3 className="about-heading">Passionate Full-Stack Developer</h3>
+
+            <p className="about-text">
+              I am a dedicated full-stack developer with experience in building 
+              modern, scalable and user-friendly applications. My expertise includes 
+              frontend, backend, REST API development, and third-party API integration.
             </p>
-            <p className="mb-4">
-              With a strong foundation in both front-end and back-end development, 
-              I bring ideas to life through clean code and innovative solutions.
+
+            <p className="about-text">
+              I have strong experience working with version control (Git, GitHub), API 
+              testing tools like Postman, and best development practices to build clean 
+              and maintainable applications.
             </p>
-            
-            <Row className="text-center mt-4">
+
+            {/* Stats Section */}
+            <Row className="stats-row">
               {stats.map((stat, index) => (
-                <Col key={index} sm={6} className="mb-3">
-                  <Card className="border-0 bg-white shadow-sm">
+                <Col key={index} xs={6} className="mb-3">
+                  <Card className="stat-card">
                     <Card.Body>
-                      <h4 className="text-primary">{stat.number}</h4>
-                      <p className="mb-0">{stat.label}</p>
+                      <h4 className="stat-number">{stat.number}</h4>
+                      <p className="stat-label">{stat.label}</p>
                     </Card.Body>
                   </Card>
                 </Col>

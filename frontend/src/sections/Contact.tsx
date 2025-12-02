@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
-import api from '../../src/api/api'
+import api from '../../src/api/api';
+ import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,10 +16,7 @@ const Contact = () => {
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -28,51 +26,44 @@ const Contact = () => {
 
     try {
       const response = await api.post('/user/message', formData);
-
       if (response.status === 201) {
         setSuccess(true);
-
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
       }
     } catch (err) {
-      const errorMessage = err.response?.data?.error || 'An unexpected error occurred.';
-      setError(errorMessage);
+      const errorMsg = err.response?.data?.error || 'An unexpected error occurred.';
+      setError(errorMsg);
     }
   };
 
   return (
-    <section className="section-padding">
+    <section className="contact-section">
       <Container>
-        <h2 className="section-title text-center">Get In Touch</h2>
-        
+        <h2 className="section-title">Get In Touch</h2>
+
         <Row>
           <Col lg={8} className="mx-auto">
 
-            {/* Success Message */}
             {success && (
-              <Alert variant="success" className="text-center">
-                Thank you! Your message has been successfully submitted.
+              <Alert variant="success" className="text-center fade-in">
+                Your message has been successfully sent! 🎉
               </Alert>
             )}
 
-            {/* Error Message */}
             {error && (
-              <Alert variant="danger" className="text-center">
+              <Alert variant="danger" className="text-center fade-in">
                 {error}
               </Alert>
             )}
 
-            <Card className="border-0 shadow">
+            <Card className="contact-card shadow-lg border-0">
               <Card.Body className="p-4">
+
                 <Form onSubmit={handleSubmit}>
+
                   <Row>
                     <Col md={6}>
-                      <Form.Group className="mb-3">
+                      <Form.Group className="mb-4 form-group-modern">
                         <Form.Label>Your Name</Form.Label>
                         <Form.Control
                           type="text"
@@ -80,12 +71,12 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          placeholder="Enter your name"
                         />
                       </Form.Group>
                     </Col>
+
                     <Col md={6}>
-                      <Form.Group className="mb-3">
+                      <Form.Group className="mb-4 form-group-modern">
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control
                           type="email"
@@ -93,13 +84,12 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          placeholder="Enter your email"
                         />
                       </Form.Group>
                     </Col>
                   </Row>
-                  
-                  <Form.Group className="mb-3">
+
+                  <Form.Group className="mb-4 form-group-modern">
                     <Form.Label>Subject</Form.Label>
                     <Form.Control
                       type="text"
@@ -107,11 +97,10 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      placeholder="Enter subject"
                     />
                   </Form.Group>
-                  
-                  <Form.Group className="mb-4">
+
+                  <Form.Group className="mb-4 form-group-modern">
                     <Form.Label>Message</Form.Label>
                     <Form.Control
                       as="textarea"
@@ -120,50 +109,53 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      placeholder="Enter your message"
                     />
                   </Form.Group>
-                  
+
                   <div className="text-center">
-                    <Button type="submit" size="lg" className="btn-primary-custom">
+                    <Button type="submit" size="lg" className="btn-submit-modern">
                       Send Message
                     </Button>
                   </div>
+
                 </Form>
+
               </Card.Body>
             </Card>
+
           </Col>
         </Row>
 
-        {/* Contact Info Section */}
+        {/* Contact Info */}
         <Row className="mt-5">
+
           <Col md={3} className="text-center mb-4">
-            <div className="contact-info">
-              <FaEnvelope className="contact-icon" />
+            <div className="contact-info-card">
+              <FaEnvelope className="contact-info-icon" />
               <h5>Email</h5>
               <p>yimermarelign@gmail.com</p>
             </div>
           </Col>
 
           <Col md={3} className="text-center mb-4">
-            <div className="contact-info">
-              <FaPhone className="contact-icon" />
+            <div className="contact-info-card">
+              <FaPhone className="contact-info-icon" />
               <h5>Phone</h5>
               <p>+251 945342453</p>
             </div>
           </Col>
 
           <Col md={3} className="text-center mb-4">
-            <div className="contact-info">
-              <FaMapMarkerAlt className="contact-icon" />
+            <div className="contact-info-card">
+              <FaMapMarkerAlt className="contact-info-icon" />
               <h5>Location</h5>
-              <p>bahirdar, Country</p>
+              <p>Bahirdar, Ethiopia</p>
             </div>
           </Col>
 
           <Col md={3} className="text-center mb-4">
-            <div className="contact-info">
-              <div className="contact-icon">
+            <div className="contact-info-card">
+              <div className="contact-info-icon">
                 <FaGithub className="me-2" />
                 <FaLinkedin />
               </div>
@@ -171,6 +163,7 @@ const Contact = () => {
               <p>Connect with me</p>
             </div>
           </Col>
+
         </Row>
 
       </Container>
