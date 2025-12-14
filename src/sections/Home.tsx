@@ -12,7 +12,7 @@ const Home = ({ scrollToSection }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const texts = [
-    { name: "MAREIGNn YIMER", title: "FULL-STACK web DEVELOPER" },
+    { name: "MAREIGNn YIMER", title: "FULL-STACK  DEVELOPER" },
     { name: "MAREIGN YIMER", title: "mobile app developer" },
     { name: "MAREIGN YIMER", title: "problom solver" },
      
